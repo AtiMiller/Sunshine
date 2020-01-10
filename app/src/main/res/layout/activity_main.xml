@@ -47,15 +47,18 @@
                         android:textSize="22sp"
                         android:textStyle="bold" />
 
-                    <Button
+                    <com.google.android.material.button.MaterialButton
                         android:id="@+id/moreInfo"
+                        app:backgroundTint="@android:color/transparent"
+                        app:cornerRadius="10dp"
+                        app:strokeColor="#FFFFFF"
+                        app:strokeWidth="2dp"
                         android:layout_width="wrap_content"
-                        android:layout_height="30dp"
+                        android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
                         android:layout_centerInParent="true"
                         android:layout_gravity="end"
                         android:layout_marginEnd="30dp"
-                        android:background="@drawable/btn_background"
                         android:contentDescription="@string/moreweatherinfo"
                         android:text="@string/more"
                         android:textAllCaps="false"
@@ -106,7 +109,6 @@
                     android:textColor="@android:color/white"
                     android:padding="10dp"
                     android:layout_marginStart="30dp"
-                    android:layout_marginTop="15dp"
                     android:layout_gravity="top" />
 
                 <TextView
@@ -162,20 +164,24 @@
                         android:layout_marginStart="30dp"
                         android:layout_alignParentStart="true" />
 
-                    <Button
+                    <com.google.android.material.button.MaterialButton
                         android:id="@+id/editDressCode"
+                        app:backgroundTint="@android:color/transparent"
+                        app:cornerRadius="10dp"
+                        app:strokeColor="#FFFFFF"
+                        app:strokeWidth="2dp"
                         android:layout_width="wrap_content"
-                        android:layout_height="30dp"
+                        android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
                         android:layout_centerInParent="true"
                         android:layout_gravity="end"
                         android:layout_marginEnd="30dp"
-                        android:background="@drawable/btn_background"
                         android:contentDescription="@string/moreweatherinfo"
-                        android:text="Edit"
+                        android:text="@string/edit_dress_code"
                         android:textAllCaps="false"
                         android:textColor="@android:color/white"
-                        android:textSize="16sp" />
+                        android:textSize="16sp"
+                        tools:ignore="RelativeOverlap" />
 
                 </RelativeLayout>
 
@@ -188,9 +194,13 @@
                     android:orientation="horizontal">
 
                     <com.google.android.material.chip.ChipGroup
-                        android:layout_weight="8"
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_weight="8">
+
+                    </com.google.android.material.chip.ChipGroup>
 
                     <com.airbnb.lottie.LottieAnimationView
                         android:id="@+id/dress_animation_view"
@@ -214,7 +224,6 @@
                     android:textColor="@android:color/white"
                     android:padding="10dp"
                     android:layout_marginStart="30dp"
-                    android:layout_marginTop="15dp"
                     android:layout_gravity="top" />
 
                 <TextView

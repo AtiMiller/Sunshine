@@ -8,14 +8,16 @@ import com.airbnb.lottie.LottieAnimationView;
 
 public class MainActivity extends AppCompatActivity {
 
-    LottieAnimationView lottieAnimationView;
+    LottieAnimationView lottieWeather, lottieDress;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        lottieAnimationView = findViewById(R.id.weather_animation_view);
-        lottieAnimationView.setAnimation(R.raw.weather_clear_sky_night);
+        lottieWeather = findViewById(R.id.weather_animation_view);
+        lottieDress = findViewById(R.id.dress_animation_view);
+        lottieWeather.setAnimation(R.raw.weather_clear_sky_night);
+        lottieDress.setAnimation(R.raw.try1);
     }
 }

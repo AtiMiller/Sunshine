@@ -5,5 +5,16 @@
     <string name="hello_blank_fragment">Today Weather</string>
     <string name="action_refresh">action_refresh</string>
     <string name="action_settings">action_settings</string>
+    <string name="main_weather_condition_title">Weather Condition</string>
+    <string name="main_dress_code_for_weather">Weather Dress Code</string>
+    <string name="wather_condition_lay_background">weatherconditionlaybackground</string>
+    <string name="in_your_current_location">In your current location:</string>
+    <string name="current_location">Current Location</string>
+    <string name="weather_dress_code_main_title">Weather Dress Code</string>
+    <string name="today_s_dress_code_advice">Today\'s dress code advice.</string>
+    <string name="editdresscodebtn">editDressCodeBtn</string>
+    <string name="more_info">More Info</string>
+    <string name="moreweatherinfo">moreWeatherInfo</string>
+    <string name="more">More</string>
     <!--    <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>-->
 </resources>

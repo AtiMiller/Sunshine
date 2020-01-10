@@ -1,40 +1,237 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/root_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
-
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            app:titleTextColor="@android:color/white"
+        <LinearLayout
+            android:id="@+id/mainLay"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:layout_scrollFlags="scroll|enterAlways"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
-        </androidx.appcompat.widget.Toolbar>
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-        <com.google.android.material.tabs.TabLayout
-            android:id="@+id/tabs"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:tabMode="fixed"
-            app:tabGravity="fill"></com.google.android.material.tabs.TabLayout>
-    </com.google.android.material.appbar.AppBarLayout>
+            <!--WeatherConditionLayout-->
 
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/view_pager"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-    </androidx.viewpager.widget.ViewPager>
+            <RelativeLayout
+                android:id="@+id/weatherConditionLay"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+                <ImageView
+                    android:id="@+id/weatherConditionBackground"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/gradient_partly_shower"
+                    android:contentDescription="@string/wather_condition_lay_background"/>
+
+                <RelativeLayout
+                    android:id="@+id/weatherConditionRelLay"
+                    android:layout_marginTop="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/weatherConditionMainTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="30dp"
+                        android:elegantTextHeight="true"
+                        android:padding="10dp"
+                        android:text="@string/main_weather_condition_title"
+                        android:textColor="@android:color/white"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/moreInfo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerInParent="true"
+                        android:layout_gravity="end"
+                        android:layout_marginEnd="30dp"
+                        android:background="@drawable/btn_background"
+                        android:contentDescription="@string/moreweatherinfo"
+                        android:text="@string/more"
+                        android:textAllCaps="false"
+                        android:textColor="@android:color/white"
+                        android:textSize="16sp" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/r2"
+                    android:layout_marginTop="15dp"
+                    android:layout_below="@+id/weatherConditionRelLay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/weatherTemperature"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="30 C"
+                        android:textColor="@android:color/white"
+                        android:textSize="50sp"
+                        android:layout_centerInParent="true"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_alignParentStart="true"/>
+
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:id="@+id/weather_animation_view"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:scaleType="centerCrop"
+                        app:lottie_loop="true"
+                        app:lottie_autoPlay="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginEnd="15dp" />
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/weatherConditionLocation"
+                    android:layout_below="@+id/r2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/in_your_current_location"
+                    android:textStyle="normal"
+                    android:textSize="18sp"
+                    android:textColor="@android:color/white"
+                    android:padding="10dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_gravity="top" />
+
+                <TextView
+                    android:id="@+id/weatherConditionCurrentLocation"
+                    android:layout_below="@+id/weatherConditionLocation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/current_location"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:textColor="@android:color/white"
+                    android:padding="10dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="30dp"
+                    android:layout_gravity="top" />
+
+            </RelativeLayout>
+
+<!--            Separator line-->
+            <View android:layout_width="match_parent"
+                android:layout_height="1dp"/>
+
+<!--            WeatherDressCodeLayout-->
+            <RelativeLayout
+                android:id="@+id/weatherDressCodeLay"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/weatherDressCodeBackground"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="#0088FF"
+                    android:contentDescription="@string/wather_condition_lay_background"/>
+
+                <RelativeLayout
+                    android:id="@+id/dressCodeRelLay"
+                    android:layout_marginTop="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/weatherDressCodeMainTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/weather_dress_code_main_title"
+                        android:textStyle="bold"
+                        android:textSize="22sp"
+                        android:textColor="@android:color/white"
+                        android:padding="10dp"
+                        android:layout_marginStart="30dp"
+                        android:layout_alignParentStart="true" />
+
+                    <Button
+                        android:id="@+id/editDressCode"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerInParent="true"
+                        android:layout_gravity="end"
+                        android:layout_marginEnd="30dp"
+                        android:background="@drawable/btn_background"
+                        android:contentDescription="@string/moreweatherinfo"
+                        android:text="Edit"
+                        android:textAllCaps="false"
+                        android:textColor="@android:color/white"
+                        android:textSize="16sp" />
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/r4"
+                    android:layout_marginTop="15dp"
+                    android:layout_below="@+id/dressCodeRelLay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.chip.ChipGroup
+                        android:layout_weight="8"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"/>
+
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:id="@+id/dress_animation_view"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:scaleType="centerCrop"
+                        app:lottie_loop="true"
+                        app:lottie_autoPlay="true"
+                        android:layout_marginEnd="15dp" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/weatherDressCodeAdvice"
+                    android:layout_below="@+id/r4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Advice:"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:textColor="@android:color/white"
+                    android:padding="10dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_gravity="top" />
+
+                <TextView
+                    android:id="@+id/weatherDressCodeCurrentLocation"
+                    android:layout_below="@+id/weatherDressCodeAdvice"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/today_s_dress_code_advice"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:textColor="@android:color/white"
+                    android:padding="10dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="30dp"
+                    android:layout_gravity="top" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

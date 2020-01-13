@@ -16,11 +16,9 @@ import android.widget.TextView;
 import com.example.sunshine.Adapters.WeatherForecastAdapter;
 import com.example.sunshine.Common.Common;
 import com.example.sunshine.Model.WeatherForecastResult;
-import com.example.sunshine.Model.WeatherResult;
 import com.example.sunshine.Retrofit.IOpenWeatherMap;
 import com.example.sunshine.Retrofit.RetrofitClient;
 
-import io.reactivex.Scheduler;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.functions.Consumer;
@@ -61,7 +59,7 @@ public class ForecastWeatherFragment extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_forecast_weather, container, false);
 
-        txt_city_name = rootView.findViewById(R.id.txt_city_name_forecast);
+        txt_city_name = rootView.findViewById(R.id.weatherDescription);
         forecast_recycler = rootView.findViewById(R.id.forecats_recycler);
         forecast_recycler.setHasFixedSize(true);
         forecast_recycler.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));

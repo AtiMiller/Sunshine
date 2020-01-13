@@ -20,7 +20,7 @@ public class Common {
 
     public static String convertUnixToHour(long sunrise) {
         Date date = new Date(sunrise*1000L);
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("HH:mm");
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("HH:mm:ss");
         String formatted = simpleDateFormat.format(date);
         return formatted;
     }

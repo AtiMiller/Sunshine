@@ -103,7 +103,7 @@ public class WeatherActivity extends AppCompatActivity {
         int itemId = item.getItemId();
 
         if (itemId == android.R.id.home) {
-            Toast.makeText(this, "home pressed", Toast.LENGTH_LONG).show();
+            startActivity(new Intent(WeatherActivity.this, MainActivity.class));
         }
         return super.onOptionsItemSelected(item);
     }

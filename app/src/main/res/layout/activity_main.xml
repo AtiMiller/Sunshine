@@ -18,15 +18,8 @@
                 android:id="@+id/weatherConditionLay"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
+                android:background="@drawable/gradient_partly_shower"
                 android:layout_weight="1">
-
-                <ImageView
-                    android:id="@+id/weatherConditionBackground"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/gradient_partly_shower"
-                    android:contentDescription="@string/wather_condition_lay_background"/>
 
                 <RelativeLayout
                     android:id="@+id/weatherConditionRelLay"
@@ -39,7 +32,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentStart="true"
-                        android:layout_marginStart="30dp"
+                        android:layout_marginStart="20dp"
                         android:elegantTextHeight="true"
                         android:padding="10dp"
                         android:text="@string/main_weather_condition_title"
@@ -75,7 +68,7 @@
                     android:layout_height="wrap_content">
 
                     <TextView
-                        android:id="@+id/weatherTemperature"
+                        android:id="@+id/currentTemperature"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="30 C"
@@ -87,7 +80,7 @@
                         android:layout_alignParentStart="true"/>
 
                     <com.airbnb.lottie.LottieAnimationView
-                        android:id="@+id/weather_animation_view"
+                        android:id="@+id/weatherAnimationView"
                         android:layout_width="150dp"
                         android:layout_height="150dp"
                         android:scaleType="centerCrop"
@@ -112,7 +105,7 @@
                     android:layout_gravity="top" />
 
                 <TextView
-                    android:id="@+id/weatherConditionCurrentLocation"
+                    android:id="@+id/currentLocation"
                     android:layout_below="@+id/weatherConditionLocation"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -133,18 +126,11 @@
 
 <!--            WeatherDressCodeLayout-->
             <RelativeLayout
-                android:id="@+id/weatherDressCodeLay"
+                android:id="@+id/dressCodeLay"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
+                android:background="#0088FF"
                 android:layout_weight="1">
-
-                <ImageView
-                    android:id="@+id/weatherDressCodeBackground"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:scaleType="centerCrop"
-                    android:src="#0088FF"
-                    android:contentDescription="@string/wather_condition_lay_background"/>
 
                 <RelativeLayout
                     android:id="@+id/dressCodeRelLay"
@@ -161,7 +147,7 @@
                         android:textSize="22sp"
                         android:textColor="@android:color/white"
                         android:padding="10dp"
-                        android:layout_marginStart="30dp"
+                        android:layout_marginStart="20dp"
                         android:layout_alignParentStart="true" />
 
                     <com.google.android.material.button.MaterialButton
@@ -194,6 +180,7 @@
                     android:orientation="horizontal">
 
                     <com.google.android.material.chip.ChipGroup
+                        android:id="@+id/dressCodeOptions"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="5dp"
@@ -203,7 +190,7 @@
                     </com.google.android.material.chip.ChipGroup>
 
                     <com.airbnb.lottie.LottieAnimationView
-                        android:id="@+id/dress_animation_view"
+                        android:id="@+id/dressAnimationView"
                         android:layout_width="150dp"
                         android:layout_height="150dp"
                         android:scaleType="centerCrop"
@@ -219,7 +206,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Advice:"
-                    android:textStyle="bold"
+                    android:textStyle="normal"
                     android:textSize="20sp"
                     android:textColor="@android:color/white"
                     android:padding="10dp"
@@ -227,7 +214,7 @@
                     android:layout_gravity="top" />
 
                 <TextView
-                    android:id="@+id/weatherDressCodeCurrentLocation"
+                    android:id="@+id/dressCodeAdvice"
                     android:layout_below="@+id/weatherDressCodeAdvice"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

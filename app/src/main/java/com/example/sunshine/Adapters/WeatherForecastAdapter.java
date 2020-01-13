@@ -41,7 +41,7 @@ public class WeatherForecastAdapter extends RecyclerView.Adapter<WeatherForecast
                 .append(".png").toString()).into(holder.weather_image);
 
         holder.txt_date_time.setText(new StringBuilder(Common.convertUnixToDate(weatherForecastResult.list.get(position).dt)));
-        holder.txt_city_name.setText(new StringBuilder(weatherForecastResult.list.get(position).weather.get(0).getDescription()));
+        holder.weatherDescriptionM.setText(new StringBuilder(weatherForecastResult.list.get(position).weather.get(0).getDescription()));
         holder.txt_temperature.setText(new StringBuilder(String.valueOf(weatherForecastResult.list.get(position).main.getTemp())).append("°C"));
 
     }
@@ -53,14 +53,14 @@ public class WeatherForecastAdapter extends RecyclerView.Adapter<WeatherForecast
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
-        TextView txt_date_time, txt_city_name, txt_temperature;
+        TextView txt_date_time, weatherDescriptionM, txt_temperature;
         ImageView weather_image;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
             txt_date_time = itemView.findViewById(R.id.txt_data_time_forecast);
-            txt_city_name = itemView.findViewById(R.id.txt_city_name_forecast);
+            weatherDescriptionM = itemView.findViewById(R.id.weatherDescription);
             txt_temperature = itemView.findViewById(R.id.txt_temperature_forecast);
             weather_image = itemView.findViewById(R.id.img_weather_forecast);
         }

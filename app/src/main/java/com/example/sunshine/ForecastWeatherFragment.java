@@ -16,7 +16,7 @@ import android.widget.TextView;
 import com.example.sunshine.Adapters.WeatherForecastAdapter;
 import com.example.sunshine.Common.Common;
 import com.example.sunshine.Model.WeatherForecastResult;
-import com.example.sunshine.Retrofit.IOpenWeatherMap;
+import com.example.sunshine.Retrofit.OpenWeatherMapAPI;
 import com.example.sunshine.Retrofit.RetrofitClient;
 
 import io.reactivex.android.schedulers.AndroidSchedulers;
@@ -32,7 +32,7 @@ import retrofit2.Retrofit;
 public class ForecastWeatherFragment extends Fragment {
 
     CompositeDisposable compositeDisposable;
-    IOpenWeatherMap mService;
+    OpenWeatherMapAPI mService;
 
     TextView txt_city_name;
     RecyclerView forecast_recycler;
@@ -50,7 +50,7 @@ public class ForecastWeatherFragment extends Fragment {
     public ForecastWeatherFragment() {
        compositeDisposable = new CompositeDisposable();
        Retrofit retrofit = RetrofitClient.getInstance();
-       mService = retrofit.create(IOpenWeatherMap.class);
+       mService = retrofit.create(OpenWeatherMapAPI.class);
     }
 
 

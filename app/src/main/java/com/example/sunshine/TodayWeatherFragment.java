@@ -16,15 +16,13 @@ import android.widget.Toast;
 
 import com.example.sunshine.Common.Common;
 import com.example.sunshine.Model.WeatherResult;
-import com.example.sunshine.Retrofit.IOpenWeatherMap;
+import com.example.sunshine.Retrofit.OpenWeatherMapAPI;
 import com.example.sunshine.Retrofit.RetrofitClient;
 import com.squareup.picasso.Picasso;
 
-import io.reactivex.Scheduler;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.functions.Consumer;
-import io.reactivex.internal.schedulers.IoScheduler;
 import io.reactivex.schedulers.Schedulers;
 import retrofit2.Retrofit;
 
@@ -41,7 +39,7 @@ public class TodayWeatherFragment extends Fragment {
     ProgressBar loading;
 
     CompositeDisposable compositeDisposable;
-    IOpenWeatherMap mService;
+    OpenWeatherMapAPI mService;
 
     static TodayWeatherFragment instance;
 
@@ -55,7 +53,7 @@ public class TodayWeatherFragment extends Fragment {
     public TodayWeatherFragment() {
        compositeDisposable = new CompositeDisposable();
        Retrofit retrofit = RetrofitClient.getInstance();
-       mService = retrofit.create(IOpenWeatherMap.class);
+       mService = retrofit.create(OpenWeatherMapAPI.class);
     }
 
 

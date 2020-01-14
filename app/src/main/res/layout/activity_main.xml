@@ -1,233 +1,232 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/background"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@android:color/black">
 
-        <LinearLayout
-            android:id="@+id/mainLay"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+    <!--WeatherConditionLayout-->
 
-            <!--WeatherConditionLayout-->
+    <TextView
+        android:id="@+id/weatherConditionMainTitle"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:elegantTextHeight="true"
+        android:padding="10dp"
+        android:text="@string/main_weather_condition_title"
+        android:textColor="@android:color/white"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-            <RelativeLayout
-                android:id="@+id/weatherConditionLay"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:background="@drawable/gradient_partly_shower"
-                android:layout_weight="1">
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/moreInfo"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerInParent="true"
+        android:layout_gravity="end"
+        android:contentDescription="@string/moreweatherinfo"
+        android:text="@string/more"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        app:backgroundTint="@android:color/transparent"
+        app:cornerRadius="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:strokeColor="#FFFFFF"
+        app:strokeWidth="2dp" />
 
-                <RelativeLayout
-                    android:id="@+id/weatherConditionRelLay"
-                    android:layout_marginTop="15dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+    <TextView
+        android:id="@+id/weatherConditionLocation"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:padding="10dp"
+        android:text="@string/in_your_current_location"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:textStyle="normal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/weatherConditionMainTitle" />
 
-                    <TextView
-                        android:id="@+id/weatherConditionMainTitle"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentStart="true"
-                        android:layout_marginStart="20dp"
-                        android:elegantTextHeight="true"
-                        android:padding="10dp"
-                        android:text="@string/main_weather_condition_title"
-                        android:textColor="@android:color/white"
-                        android:textSize="22sp"
-                        android:textStyle="bold" />
+    <TextView
+        android:id="@+id/currentLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/weatherConditionLocation"
+        android:layout_gravity="top"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:maxEms="10"
+        android:minEms="3"
+        android:padding="10dp"
+        android:text="@string/current_location"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/weatherConditionLocation" />
 
-                    <com.google.android.material.button.MaterialButton
-                        android:id="@+id/moreInfo"
-                        app:backgroundTint="@android:color/transparent"
-                        app:cornerRadius="10dp"
-                        app:strokeColor="#FFFFFF"
-                        app:strokeWidth="2dp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentEnd="true"
-                        android:layout_centerInParent="true"
-                        android:layout_gravity="end"
-                        android:layout_marginEnd="30dp"
-                        android:contentDescription="@string/moreweatherinfo"
-                        android:text="@string/more"
-                        android:textAllCaps="false"
-                        android:textColor="@android:color/white"
-                        android:textSize="16sp" />
+    <TextView
+        android:id="@+id/currentTemperature"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:text="30 C"
+        android:textColor="@android:color/white"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/currentLocation" />
 
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:id="@+id/r2"
-                    android:layout_marginTop="15dp"
-                    android:layout_below="@+id/weatherConditionRelLay"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <TextView
-                        android:id="@+id/currentTemperature"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="30 C"
-                        android:textColor="@android:color/white"
-                        android:textSize="50sp"
-                        android:layout_centerInParent="true"
-                        android:layout_marginStart="30dp"
-                        android:layout_marginTop="15dp"
-                        android:layout_alignParentStart="true"/>
-
-                    <com.airbnb.lottie.LottieAnimationView
-                        android:id="@+id/weatherAnimationView"
-                        android:layout_width="150dp"
-                        android:layout_height="150dp"
-                        android:scaleType="centerCrop"
-                        app:lottie_loop="true"
-                        app:lottie_autoPlay="true"
-                        android:layout_alignParentEnd="true"
-                        android:layout_marginEnd="15dp" />
-
-                </RelativeLayout>
-
-                <TextView
-                    android:id="@+id/weatherConditionLocation"
-                    android:layout_below="@+id/r2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/in_your_current_location"
-                    android:textStyle="normal"
-                    android:textSize="18sp"
-                    android:textColor="@android:color/white"
-                    android:padding="10dp"
-                    android:layout_marginStart="30dp"
-                    android:layout_gravity="top" />
-
-                <TextView
-                    android:id="@+id/currentLocation"
-                    android:layout_below="@+id/weatherConditionLocation"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/current_location"
-                    android:textStyle="bold"
-                    android:textSize="20sp"
-                    android:textColor="@android:color/white"
-                    android:padding="10dp"
-                    android:layout_marginStart="30dp"
-                    android:layout_marginEnd="30dp"
-                    android:layout_gravity="top" />
-
-            </RelativeLayout>
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/weatherAnimationView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="20dp"
+        android:maxWidth="250dp"
+        android:maxHeight="250dp"
+        android:minWidth="50dp"
+        android:minHeight="50dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/weatherConditionLocation"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true" />
 
 <!--            Separator line-->
-            <View android:layout_width="match_parent"
-                android:layout_height="1dp"/>
 
-<!--            WeatherDressCodeLayout-->
-            <RelativeLayout
-                android:id="@+id/dressCodeLay"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:background="#0088FF"
-                android:layout_weight="1">
+    <!--            WeatherDressCodeLayout-->
 
-                <RelativeLayout
-                    android:id="@+id/dressCodeRelLay"
-                    android:layout_marginTop="15dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+    <View
+        android:id="@+id/view"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/white"
+        app:layout_constraintTop_toBottomOf="@+id/currentTemperature" />
 
-                    <TextView
-                        android:id="@+id/weatherDressCodeMainTitle"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/weather_dress_code_main_title"
-                        android:textStyle="bold"
-                        android:textSize="22sp"
-                        android:textColor="@android:color/white"
-                        android:padding="10dp"
-                        android:layout_marginStart="20dp"
-                        android:layout_alignParentStart="true" />
+    <TextView
+        android:id="@+id/weatherDressCodeMainTitle"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:padding="10dp"
+        android:text="@string/weather_dress_code_main_title"
+        android:textColor="@android:color/white"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view" />
 
-                    <com.google.android.material.button.MaterialButton
-                        android:id="@+id/editDressCode"
-                        app:backgroundTint="@android:color/transparent"
-                        app:cornerRadius="10dp"
-                        app:strokeColor="#FFFFFF"
-                        app:strokeWidth="2dp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentEnd="true"
-                        android:layout_centerInParent="true"
-                        android:layout_gravity="end"
-                        android:layout_marginEnd="30dp"
-                        android:contentDescription="@string/moreweatherinfo"
-                        android:text="@string/edit_dress_code"
-                        android:textAllCaps="false"
-                        android:textColor="@android:color/white"
-                        android:textSize="16sp"
-                        tools:ignore="RelativeOverlap" />
+    <com.google.android.material.button.MaterialButton
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:id="@+id/editDressCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerInParent="true"
+        android:layout_gravity="end"
+        android:contentDescription="@string/moreweatherinfo"
+        android:text="@string/edit_dress_code"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        app:backgroundTint="@android:color/transparent"
+        app:cornerRadius="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view"
+        app:strokeColor="#FFFFFF"
+        app:strokeWidth="2dp"
+        tools:ignore="RelativeOverlap" />
 
-                </RelativeLayout>
+    <LinearLayout
+        android:id="@+id/relativeLayout"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/weatherDressCodeMainTitle">
 
-                <LinearLayout
-                    android:id="@+id/r4"
-                    android:layout_marginTop="15dp"
-                    android:layout_below="@+id/dressCodeRelLay"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/dressCodeOptions"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="7"
+            android:layoutDirection="rtl"
+            android:maxWidth="200dp"
+            android:maxHeight="200dp"
+            android:minWidth="100dp"
+            android:minHeight="100dp"
+            app:layout_constraintEnd_toStartOf="@+id/dressAnimationView" />
 
-                    <com.google.android.material.chip.ChipGroup
-                        android:id="@+id/dressCodeOptions"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="5dp"
-                        android:layout_marginEnd="5dp"
-                        android:layout_weight="8">
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/dressAnimationView"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_weight="3"
+            android:maxWidth="200dp"
+            android:maxHeight="200dp"
+            android:minWidth="100dp"
+            android:minHeight="100dp"
+            android:scaleType="centerCrop"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true" />
+    </LinearLayout>
 
-                    </com.google.android.material.chip.ChipGroup>
+    <TextView
+        android:layout_marginTop="10dp"
+        android:id="@+id/weatherDressCodeAdvice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:layout_marginStart="20dp"
+        android:padding="10dp"
+        android:text="Advice:"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:textStyle="normal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />
 
-                    <com.airbnb.lottie.LottieAnimationView
-                        android:id="@+id/dressAnimationView"
-                        android:layout_width="150dp"
-                        android:layout_height="150dp"
-                        android:scaleType="centerCrop"
-                        app:lottie_loop="true"
-                        app:lottie_autoPlay="true"
-                        android:layout_marginEnd="15dp" />
+    <TextView
+        android:id="@+id/dressCodeAdvice"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/weatherDressCodeAdvice"
+        android:layout_gravity="top"
+        android:padding="10dp"
+        android:text="@string/today_s_dress_code_advice"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/weatherDressCodeAdvice" />
 
-                </LinearLayout>
-
-                <TextView
-                    android:id="@+id/weatherDressCodeAdvice"
-                    android:layout_below="@+id/r4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Advice:"
-                    android:textStyle="normal"
-                    android:textSize="20sp"
-                    android:textColor="@android:color/white"
-                    android:padding="10dp"
-                    android:layout_marginStart="30dp"
-                    android:layout_gravity="top" />
-
-                <TextView
-                    android:id="@+id/dressCodeAdvice"
-                    android:layout_below="@+id/weatherDressCodeAdvice"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/today_s_dress_code_advice"
-                    android:textStyle="bold"
-                    android:textSize="18sp"
-                    android:textColor="@android:color/white"
-                    android:padding="10dp"
-                    android:layout_marginStart="30dp"
-                    android:layout_marginEnd="30dp"
-                    android:layout_gravity="top" />
-
-            </RelativeLayout>
-
-        </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
